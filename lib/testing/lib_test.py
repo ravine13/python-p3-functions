@@ -3,6 +3,7 @@
 from functions import greet_programmer, greet, greet_with_default, \
                         add, halve
 
+
 import io
 import sys
 
@@ -15,7 +16,7 @@ class TestGreetProgrammer:
         captured_out = io.StringIO()
         sys.stdout = captured_out
         greet_programmer()
-        sys.stdout = sys.__stdout__
+        sys.stdout = sys._stdout_
         assert(captured_out.getvalue() == "Hello, programmer!\n")
 
 class TestGreet:
@@ -26,7 +27,7 @@ class TestGreet:
         captured_out = io.StringIO()
         sys.stdout = captured_out
         greet("Guido")
-        sys.stdout = sys.__stdout__
+        sys.stdout = sys._stdout_
         assert(captured_out.getvalue() == "Hello, Guido!\n")
 
 class TestGreetWithDefault:
@@ -37,7 +38,7 @@ class TestGreetWithDefault:
         captured_out = io.StringIO()
         sys.stdout = captured_out
         greet_with_default()
-        sys.stdout = sys.__stdout__
+        sys.stdout = sys._stdout_
         assert(captured_out.getvalue() == "Hello, programmer!\n")
 
     def test_greet_with_default_with_param(self):
@@ -45,7 +46,7 @@ class TestGreetWithDefault:
         captured_out = io.StringIO()
         sys.stdout = captured_out
         greet_with_default("Guido")
-        sys.stdout = sys.__stdout__
+        sys.stdout = sys._stdout_
         assert(captured_out.getvalue() == "Hello, Guido!\n")
 
 class TestAdd:
