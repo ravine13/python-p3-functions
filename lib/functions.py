@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
+# from __future__ import unicode_literals
+
+import io
+import sys
 
 def greet_programmer():
-    print("Hello, programmer!")
+    print(u"Hello, programmer!")
 
 def greet(name):
-    name = "Guido"
-    print(f"Hello, {name}!")
+    print("Hello, %s!" % name)
 
 def greet_with_default(name="programmer"):
-    print(f"Hello, {name}!")
+    print("Hello, %s!" % name)
 
 def add(num1, num2):
     return num1 + num2
